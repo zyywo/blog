@@ -1,4 +1,8 @@
-<!--markdown-->`git checkout bugfix`：切换到分支bugfix
+<!--markdown-->`git commit -m "commit message"`：确认变动
+
+`git add -all`: 添加所有文件
+
+`git checkout bugfix`：切换到分支bugfix
 
 `git branch bugfix`：创建分支bugfix
 
