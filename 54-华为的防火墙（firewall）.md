@@ -1,5 +1,4 @@
-<!--markdown-->
-华为防火墙上默认的四个安全区域：
+<!--markdown-->华为防火墙上默认的四个安全区域：
 untrust：低级别，安全优先级为5
 DMZ：中度级别，安全优先级为50
 trust：较高级别，安全优先级为85
@@ -61,6 +60,14 @@ policy interzone trust untrust {inbound | outbound}
     ... ... 
   policy N
 ```
+### “与”和“或”的关系
+```
+policy0
+  policy source 1
+  policy source 2
+  policy destination 3
+```
+相同的条件之间是 或 的关系，不同的条件之间是 与 的关系。上面策略的意思是匹配从1至3或从2至3的流量。
 
 配置缺省域间包过滤策略：
 ```
@@ -97,4 +104,10 @@ policy unterzone trust dmz outbound
 
 firewall interzone trust dmz
  detect ftp
-```	
+```
+### 防火墙环境中数据包来回路径不一致问题
+使用双机热备方案，同步会话表
+### 同一个报文不允许两次经过防火墙
+使用虚拟防火墙（类似vrf）把接口放入不同的vpn实例中
+### 防火墙单接口承载多安全区域流量
+使用子接口，每个子接口加入不同的vlan和安全域	
