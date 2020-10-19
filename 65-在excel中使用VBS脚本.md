@@ -44,4 +44,26 @@ sub worksheet_selectionChange(byval Target As Range)
         'msgbox("不能大于" & max)
     end if
 end sub
+```
+##函数调用，for循环，单元格格式，截取字符串
+```
+'根据cell单元格的内容计算出sn码，结果保存在taeget单元格中
+'35323033303033393033313800000000
+Sub 计算sn(ByVal cell As String, ByVal target As String)
+  Dim s As String
+  s1 = Left(Range(cell), 24)
+  For i = 2 To 24 Step 2
+    s = s & Mid(s1, i, 1)
+    Next
+  Range(target).NumberFormatLocal = "@"
+  Range(target) = s
+End Sub
+
+'从A列第1行开始计算sn，结果保存到B列
+Sub 循环表格计算sn()
+  maxrow = Sheet1.UsedRange.Rows.Count
+  For i = 1 To maxrow
+    Call 计算sn("A" & i, "B" & i)
+    Next
+End Sub
 ```	
