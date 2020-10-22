@@ -9,8 +9,15 @@
 ## 弹窗显示表格有多少行内容
 ```
 Dim rows as Interger
-rows = Sheet2.UsedRange.rows.Count
-MsgBox(rows)
+'获取表格有多少行的两种方法
+maxrow = Sheet2.UsedRange.rows.Count
+maxrow=workbooks("a.xlsm").worksheets("sheetname").range("a65536").end(xlup).row
+MsgBox(maxrow)
+```
+
+## 在整列内查找,find返回值是range类型
+```
+Range("a:a").find("text")
 ```
 
 ## if 语句
