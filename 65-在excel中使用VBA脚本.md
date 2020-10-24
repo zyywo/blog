@@ -1,6 +1,8 @@
 <!--markdown-->1. 关键字不分大小写
 2. 变量先定义再使用
 
+[Microsoft Docs上关于对象的属性、方法的文档](https://docs.microsoft.com/zh-cn/office/vba/api/overview/excel/object-model)
+
 `Range("A1")`：选择A1单元格
 `MsgBox("消息")`：显示一个弹窗
 `Sub`：关键字，定义函数使用
@@ -19,6 +21,7 @@ MsgBox(maxrow)
 ```
 Range("a:a").find("text")
 ```
+[Microsoft Docs上find方法的介绍](https://docs.microsoft.com/zh-cn/office/vba/api/excel.range.find)
 
 ## if 语句
 ```
